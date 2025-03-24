@@ -9,10 +9,10 @@ const Cards = ({ results }) => {
       let { id, name, image, location, status } = x;
       // x in this context means target the mapped results one by one
       return (
-        <div className="col-4 position-relative" key={id}>
+        <div className="col-4 position-relative mb-4" key={id}>
           <div className={styles.cards}>
-            <img src={image} alt="" className= {`${styles.img} img-fluid`} />
-            <div className="content mb-4">
+            <img src={image} alt="" className={`${styles.img} img-fluid`} />
+            <div style={{ padding: "10px" }} className="content mb-4">
               <div className="fs-4 fw-bold mb-4">{name}</div>
               <div className="">
                 <div className="fs-6">Last location</div>
@@ -20,7 +20,33 @@ const Cards = ({ results }) => {
               </div>
             </div>
           </div>
-          <div className={`${styles.badge} badge bg-danger position-absolute`}>{status}</div>
+          {(() => {
+            if (status === "Dead") {
+              return (
+                <div
+                  className={`${styles.badge} badge bg-danger position-absolute`}
+                >
+                  {status}
+                </div>
+              );
+            } else if (status === "Alive") {
+              return (
+                <div
+                  className={`${styles.badge} badge bg-success position-absolute`}
+                >
+                  {status}
+                </div>
+              );
+            } else {
+              return (
+                <div
+                  className={`${styles.badge} badge bg-secondary position-absolute`}
+                >
+                  {status}
+                </div>
+              );
+            }
+          })()}
         </div>
       );
       /*
