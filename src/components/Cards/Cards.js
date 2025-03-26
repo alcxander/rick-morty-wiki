@@ -53,7 +53,7 @@ const Cards = ({ results }) => {
       <div className={`${styles.badge} badge bg-danger position-absolute`}>{status}</div>
       so here I see when loading in css from another sourec like a local source
       you can create a variable out of the reference with `` then make a ${} reference inside
-      AND past along the rest of the classname and then bootstrap will see it anyway
+      AND past along the rest of the className and then bootstrap will see it anyway
       at render and work just fine
 
       */
