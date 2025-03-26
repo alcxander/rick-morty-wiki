@@ -3,6 +3,8 @@ import "bootstrap/dist/js/bootstrap.bundle.min";
 import Filters from "./components/Filters/Filters";
 import Cards from "./components/Cards/Cards";
 import React, { useState, useEffect } from 'react'
+import Pagination from "./components/Pagination/Pagination";
+import Search from "./components/Search/Search";
 
 function App() {
 
@@ -19,21 +21,16 @@ function App() {
   // inside the string we are working on e.g. updating page numbers
 
   useEffect(()=>{
-
     //IIFE - immediately invoke functional expression
     // runs as soon as the js is opened/loaded
     // this function runs when the page is changed so that we can get fresh data 
     // on button click
-
     (async function(){
       //fetch data
       let data = await fetch(api).then(res=>res.json());
       //await means wait a little bit, a la a promise. so it doesnt execute immidiately
       updateFetchedData(data);
-
     })();
-    
-
   },[api])
 
   
@@ -43,6 +40,7 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick & Morty <span className="text-primary">WiKi</span>
       </h1>
+      <Search />
       <div className="container">
         <div className="row">
           <div className="col-3">
@@ -55,6 +53,7 @@ function App() {
           </div>
         </div>
       </div>
+      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </div>
   );
 }

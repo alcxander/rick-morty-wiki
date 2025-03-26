@@ -1,8 +1,13 @@
 import React from 'react'
+import styles from './Search.module.scss'
+import { Form } from 'react-router-dom'
 
 const Search = () => {
   return (
-    <div>Search</div>
+    <form className="">
+      <input type="text" className={styles.input} placeholder='Search for Characters'/>
+      <button className="btn btn-primary">Search</button>
+    </form>
   )
 }
 
