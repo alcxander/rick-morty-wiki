@@ -12,11 +12,13 @@ function App() {
   // usestate here defines a variable then a function to update that variable 
   // and use state allows us to give a default value in the brackets.
 
+  let [search, setSearch] = useState("");
+
   let [fetchedData, updateFetchedData] = useState([]);
   let {info, results} = fetchedData; // destructuring so we dont have to do var.thing every time we want. 
   // also it means we can pass just the values we want to pass between places on the site
 
-  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}`;
+  let api = `https://rickandmortyapi.com/api/character/?page=${pageNumber}&name=${search}`;
   //this is a template literal, we use graves so that we can work with variables
   // inside the string we are working on e.g. updating page numbers
 
@@ -40,7 +42,7 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick & Morty <span className="text-primary">WiKi</span>
       </h1>
-      <Search />
+      <Search setSearch={setSearch}/>
       <div className="container">
         <div className="row">
           <div className="col-3">
