@@ -42,12 +42,10 @@ function App() {
       <h1 className="text-center ubuntu my-4">
         Rick & Morty <span className="text-primary">WiKi</span>
       </h1>
-      <Search setSearch={setSearch}/>
+      <Search setPageNumber={setPageNumber} setSearch={setSearch}/>
       <div className="container">
         <div className="row">
-          <div className="col-3">
             <Filters />
-          </div>
           <div className="col-8">
             <div className="row">
               <Cards results={results}/>
@@ -55,7 +53,7 @@ function App() {
           </div>
         </div>
       </div>
-      <Pagination pageNumber={pageNumber} setPageNumber={setPageNumber}/>
+      <Pagination info={info} pageNumber={pageNumber} setPageNumber={setPageNumber}/>
     </div>
   );
 }

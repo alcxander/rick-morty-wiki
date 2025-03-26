@@ -3,7 +3,8 @@ import styles from './Search.module.scss'
 import { Form } from 'react-router-dom'
 
 const Search = ({
-  setSearch
+  setSearch,
+  setPageNumber
 }) => {
   return (
     <form className="d-flex justify-content-center gap-4 mb-5">
@@ -12,8 +13,9 @@ const Search = ({
         // value, which will get passed back to the usestate function of setSearch
         // and then the iife will get called with the updated value showing 
         // the updated url paramter
+        setPageNumber(1);
       }} type="text" className={styles.input} placeholder='Search for Characters'/>
-      <button className={`${styles.btn} btn btn-primary fs-5`}>Search</button>
+      <button onClick={e=>{e.preventDefault()}} className={`${styles.btn} btn btn-primary fs-5`}>Search</button>
     </form>
   )
 }
