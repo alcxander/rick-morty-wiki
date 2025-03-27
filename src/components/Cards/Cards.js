@@ -13,8 +13,8 @@ const Cards = ({ results, page }) => {
         <Link 
         style={{textDecoration: "none"}}
           to={`${page}${id}`}
-        className="col-4 position-relative mb-4 text-dark" key={id}>
-          <div className={styles.cards}>
+        className="col-lg-4 col-md-6 col-12 position-relative mb-4 text-dark" key={id}>
+          <div className={`${styles.cards} d-flex flex-column justify-content-center`}>
             <img src={image} alt="" className={`${styles.img} img-fluid`} />
             <div style={{ padding: "10px" }} className="content mb-4">
               <div className="fs-4 fw-bold mb-4">{name}</div>

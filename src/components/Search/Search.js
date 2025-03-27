@@ -7,7 +7,7 @@ const Search = ({
   setPageNumber
 }) => {
   return (
-    <form className="d-flex justify-content-center gap-4 mb-5">
+    <form className="d-flex justify-content-center gap-4 mb-5 flex-sm-row flex-column align-items-center">
       <input onChange={e=>{
         setSearch(e.target.value);// think i did a learn. this onchange will update then
         // value, which will get passed back to the usestate function of setSearch

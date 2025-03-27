@@ -12,5 +12,5 @@ code {
 
 
 .ubuntu {
-  font-family: 'Ubuntu';
+  font-family: 'Ubuntu' !important;
 }
