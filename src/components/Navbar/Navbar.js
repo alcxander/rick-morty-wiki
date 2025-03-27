@@ -1,9 +1,13 @@
 import React from "react";
 import {NavLink, Link} from 'react-router-dom';
+import '../../App.css';
+
+//to import css just path to the file. thats interesting why doesnt app.css apply globally inseard
+// of having to import dedicated file
 
 const Navbar = () => {
   return (
-    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+    <nav className="navbar navbar-expand-lg bg-body-tertiary mb-4">
       <div className="container">
       <Link to="/" className="ubuntu navbar-brand fs-3">
         Rick & Morty <span className="text-primary">WiKi</span>
@@ -22,17 +26,18 @@ const Navbar = () => {
                 display: none}   
                 
                 button[aria-expanded="true"] > .open{
-                display: none}
+                display: none
+                }
 
                 `}
             </style>
 
-          <i class="fa-solid fa-bars open"></i>
-          <i class="fa-solid fa-xmark close"></i>
+          <i class="fa-solid fa-bars open fw-bold text-dark"></i>
+          <i class="fa-solid fa-xmark close fw-bold text-dark"></i>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div className="navbar-nav fs-5">
-            <NavLink to="/" className="nav-link" >
+            <NavLink activeClassName="active" to="/" className="nav-link" >
               Characters
             </NavLink>
             <NavLink to="/episodes" className="nav-link">
