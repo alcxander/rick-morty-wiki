@@ -1,7 +1,8 @@
 import React from "react";
 import styles from "./Cards.module.scss";
+import { Link } from "react-router-dom";
 
-const Cards = ({ results }) => {
+const Cards = ({ results, page }) => {
   let display;
 
   if (results) {
@@ -9,7 +10,10 @@ const Cards = ({ results }) => {
       let { id, name, image, location, status } = x;
       // x in this context means target the mapped results one by one
       return (
-        <div className="col-4 position-relative mb-4" key={id}>
+        <Link 
+        style={{textDecoration: "none"}}
+          to={`${page}${id}`}
+        className="col-4 position-relative mb-4 text-dark" key={id}>
           <div className={styles.cards}>
             <img src={image} alt="" className={`${styles.img} img-fluid`} />
             <div style={{ padding: "10px" }} className="content mb-4">
@@ -47,7 +51,7 @@ const Cards = ({ results }) => {
               );
             }
           })()}
-        </div>
+        </Link>
       );
       /*
       <div className={`${styles.badge} badge bg-danger position-absolute`}>{status}</div>
