@@ -17,7 +17,18 @@ const Navbar = () => {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span className="navbar-toggler-icon"></span>
+            <style jsx>{`
+                button[aria-expanded="false"] > .close{
+                display: none}   
+                
+                button[aria-expanded="true"] > .open{
+                display: none}
+
+                `}
+            </style>
+
+          <i class="fa-solid fa-bars open"></i>
+          <i class="fa-solid fa-xmark close"></i>
         </button>
         <div className="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <div className="navbar-nav fs-5">
